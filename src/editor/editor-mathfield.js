@@ -3681,7 +3681,10 @@ export class Mathfield {
         return true;
     }
     $hasFocus() {
-        return document.hasFocus() && document.activeElement === this.textarea;
+        return (
+            document.hasFocus() &&
+            this.element.getRootNode().activeElement === this.textarea
+        );
     }
     $focus() {
         if (!this.$hasFocus()) {
